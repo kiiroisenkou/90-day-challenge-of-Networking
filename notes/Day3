@@ -1,0 +1,72 @@
+# 📅 Day 3: IP Addressing and Subnetting
+
+## 🎯 Objectives
+
+- Understand the structure of IPv4 addresses, including public vs. private IPs, subnet masks, and default gateways.
+- Master subnetting concepts: dividing networks into subnets, calculating subnet ranges, and understanding CIDR notation.
+- Apply these concepts in a virtual lab to configure and analyze network traffic.
+
+---
+
+## 📚 Theoretical Study
+
+### 📺 Videos Watched
+- [IPv4 Addressing - Professor Messer’s CompTIA Network+ N10-009](https://www.youtube.com/watch?v=IPv4AddressingVideo)
+- [IPv4 Subnetting - Professor Messer’s CompTIA Network+ N10-009](https://www.youtube.com/watch?v=IPv4SubnettingVideo)
+
+### 📝 Practice Questions
+- [ExamCompass: IP Addressing and Subnetting Practice Questions](https://www.examcompass.com/comptia/network-plus-certification/free-network-plus-practice-tests)
+
+---
+
+## 🧪 Practical Lab
+
+### ✅ IP Configuration on VMs
+- **VM1:** 192.168.1.10/24
+- **VM2:** 192.168.1.20/24
+- **VM3:** 192.168.2.10/24
+
+### ✅ Connectivity Tests
+- Pinged between VMs on the same subnet – ✅ Success
+- Pinged between VMs on different subnets – ❌ Failed (no routing)
+
+### 🔢 Subnet Calculations
+- Manual CIDR to IP range: /25 and /26
+- Verified using [Subnet Calculator](https://www.subnet-calculator.com/)
+
+### 🔍 Packet Analysis
+- Captured ICMP traffic using Wireshark
+- Applied filters for specific IP packets (e.g., `icmp`, `ip.addr==192.168.1.10`)
+
+---
+
+## 🧠 Key Concepts and Notes
+
+### 📌 IPv4 Addressing
+- **Format:** 32-bit address (e.g., `192.168.1.1`)
+- **Private IP Ranges:**
+  - `10.0.0.0 – 10.255.255.255`
+  - `172.16.0.0 – 172.31.255.255`
+  - `192.168.0.0 – 192.168.255.255`
+- **Subnet Mask:** Separates network and host parts of IP (e.g., `255.255.255.0`)
+- **Default Gateway:** Router IP used for external network access
+
+### 📌 Subnetting
+- **CIDR Notation:** `/24` = `255.255.255.0`
+- **Number of Subnets:** `2^n` (n = bits borrowed from host)
+- **Hosts per Subnet:** `2^(32 - subnet bits) - 2`
+- **Example: 192.168.1.0/26**
+  - `192.168.1.0 – 192.168.1.63`
+  - `192.168.1.64 – 192.168.1.127`
+  - `192.168.1.128 – 192.168.1.191`
+  - `192.168.1.192 – 192.168.1.255`
+
+
+
+## 🔄 Reflection
+
+- ✅ Gained solid knowledge of IP addressing, subnetting, and network layout logic
+- ✅ Strengthened ability to interpret packet behavior using Wireshark
+-
+
+> 📂 This file is part of my **90-Day Cybersecurity Analyst Roadmap**. Stay tuned for Day 4!
